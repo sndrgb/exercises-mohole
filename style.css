@@ -1,0 +1,10 @@
+body {
+  margin: 2rem;
+  font-family: sans-serif;
+}
+
+#logger pre {
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid #ebebeb;
+}
