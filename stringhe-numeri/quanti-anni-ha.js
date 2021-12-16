@@ -9,5 +9,7 @@
     Input: anno corrente = 2018, anno di nascita = 1991
     Ouput: età = 27, anni mancanti = 73
 
-  
 */
+
+const currentYear = 2018
+const birthYear = 1991

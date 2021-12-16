@@ -16,6 +16,4 @@
 
   Consiglio:
   Per andare a capo usa '\n'.
-
-  
 */

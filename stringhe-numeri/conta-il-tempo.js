@@ -37,6 +37,15 @@ console.log(`hours: ${hours}`)
 console.log(`minutes: ${minutes}`)
 console.log(`seconds: ${seconds}`)
 
+
+console.log(`${Math.floor(hours)} ore, ${Math.floor(minutes)} minuti e ${seconds} secondi.`)
+
 // Oggetto Math
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
 // abs, floor, round, ceil, random
+
+// Math.abs
+// Math.random
+// Math.floor || Math.round(3.2) -> 3 || Math.round(3.7) -> 3
+// Math.round || Math.round(3.2) -> 3 || Math.round(3.7) -> 4
+// Math.ceil || Math.round(3.2) -> 4 || Math.round(3.7) -> 4

@@ -7,10 +7,8 @@ console.log = (message) => {
   let log = message
 
   if (typeof message === 'object') {
-    console.log(log)
     log = JSON.stringify(message);
   }
-
 
   const row = document.createElement('pre');
   const text = document.createTextNode(`(${counter}): ${log}`);

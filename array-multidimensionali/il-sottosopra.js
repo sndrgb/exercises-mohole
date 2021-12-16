@@ -3,7 +3,7 @@
   Scrivi un programma che prenda in input un array multidimensionale e stampi in output la sua trasposta.
 
   Esempio:
-    Input: 
+    Input:
       [
         [1, 2],
         [3, 4],
@@ -15,5 +15,5 @@
         [2, 4, 6],
       ]
 
-  
+
 */
