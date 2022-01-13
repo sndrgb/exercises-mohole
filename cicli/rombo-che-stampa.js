@@ -16,36 +16,62 @@
   Per indentare puoi usare il tab con '\t'.
 */
 
-const numero = 89
 
-for (let i = 1; i <= numero - 2; i += 2) {
-  let string = ''
-  let tabCounter = (numero - i) / 2
+function primaParte(n) {
+  for (let i = 1; i <= numero - 2; i += 2) {
+    let string = ''
+    for (let z = 1; z <= n; z++) {
+      let tabCounter = (numero - i) / 2
 
-  for (let k = tabCounter; k >= 0; k--) {
-    string += ' '
+      for (let k = tabCounter; k >= 0; k--) {
+        string += '-'
+      }
+
+      for (let k = 1; k <= i; k++) {
+        string += 'X'
+      }
+
+      for (let k = tabCounter; k >= 0; k--) {
+        string += '-'
+      }
+
+    }
+    console.log(string)
   }
-
-  for (let k = 1; k <= i; k++) {
-    string += 'X'
-  }
-
-  console.log(string)
 }
 
-for (let i = numero; i >= 1; i -= 2) {
-  let string = ''
-  let tabCounter = (numero - i) / 2
+function secondaParte(n) {
+  for (let i = numero; i >= 1; i -= 2) {
+    let string = ''
 
-  for (let k = tabCounter; k >= 0; k--) {
-    string += ' '
+    for (let z = 1; z <= n; z++) {
+      let tabCounter = (numero - i) / 2
+
+      for (let k = tabCounter; k >= 0; k--) {
+        string += '-'
+      }
+
+      for (let k = i; k >= 1; k--) {
+        string += 'X'
+      }
+
+      for (let k = tabCounter; k >= 0; k--) {
+        string += '-'
+      }
+    }
+    console.log(string)
   }
-
-  for (let k = i; k >= 1; k--) {
-    string += 'X'
-  }
-
-  console.log(string)
 }
+
+function generaRombo(x, y) {
+  for (let riga = 0; riga < x; riga++) {
+    primaParte(y)
+    secondaParte(y)
+  }
+}
+
+const numero = 23
+generaRombo(10, 5)
+
 
 
