@@ -37,6 +37,8 @@ console.log(`hours: ${hours}`)
 console.log(`minutes: ${minutes}`)
 console.log(`seconds: ${seconds}`)
 
+seconds = 0
+
 
 console.log(`${Math.floor(hours)} ore, ${Math.floor(minutes)} minuti e ${seconds} secondi.`)
 

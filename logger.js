@@ -1,25 +1,30 @@
 const old = console.log;
-const logger = document.querySelector('#logger');
+const log = document.querySelector('#logger')
+const methods = ['log','debug','info','warn','error']
+
 let counter = 0
 
-console.log = (...args) => {
-  counter++
+methods.forEach(verb => {
+  console[verb] = ((method, verb, log) => {
+    return function () {
+      method.apply(console, arguments);
+        counter++
 
-  let log = args.reduce((oldVal, val) => {
-    let newValue = val
+      let log = Array.prototype.slice.call(arguments).reduce((oldVal, val) => {
+        let newValue = val
 
-    if (typeof newValue === 'object') {
-      newValue = JSON.stringify(newValue);
-    }
+        if (typeof newValue === 'object') {
+          newValue = JSON.stringify(newValue);
+        }
 
-    return `${oldVal} ${newValue}`;
+        return `${oldVal} ${newValue}`;
 
-  })
+      })
 
-  const row = document.createElement('pre');
-  const text = document.createTextNode(`(${counter}): ${log}`);
-  row.appendChild(text);
-  logger.appendChild(row);
-
-  old(...args);
-}
+      const row = document.createElement('pre');
+      const text = document.createTextNode(`(${counter}): ${log}`);
+      row.appendChild(text);
+      logger.appendChild(row);
+    };
+  })(console[verb], verb, log);
+});

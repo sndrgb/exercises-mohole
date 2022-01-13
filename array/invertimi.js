@@ -12,6 +12,25 @@
 
   Consigli:
   Per la variante ricordati l'uso degli indici del ciclo ;)
-
-  
 */
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+function reverse(array) {
+  let temporary = [];
+
+  for (var i = 0; i < arrayLength; i++) {
+    temporary.push(array.pop());
+  }
+
+  return temporary
+}
+
+const arrayLength = Number(window.prompt("Type the lenght of array", ""));
+const array = new Array(arrayLength).fill().map(v => randomNumber(1,10))
+
+console.log(array)
+console.log(array.reverse())
+console.log(reverse(array))

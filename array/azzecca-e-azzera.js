@@ -11,3 +11,22 @@
   documentazione: https://developer.mozilla.org/it/docs/Web/API/Window/prompt
 
 */
+
+function randomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+}
+
+let array = new Array(100).fill(0).map(() => randomNumber(1,50));
+
+const generateRecursive = () => {
+  const userNumber = Number(window.prompt("Type a number", ""));
+  array = array.map(a => a % userNumber === 0 ? 0 : a);
+
+  console.log(array.some(a => a), array)
+
+  if (array.some(a => a)) {
+    setTimeout(generateRecursive, 0);
+  }
+}
+
+generateRecursive()
